@@ -5,11 +5,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { useSetupTheme } from './hooks/useSetupTheme';
 import { lightTheme, darkTheme } from './assets/theme/theme';
+import { selecttheme } from './redux/selectors/theme.selector';
 
 export const App = () => {
-  const { theme } = useAppSelector(store => store.theme)
-  const themeCondition = theme === THEME.DARK ? darkTheme : lightTheme
+  const theme = useAppSelector(selecttheme)
   useSetupTheme()
+  const themeCondition = theme === THEME.DARK ? darkTheme : lightTheme
 
   return (
     <ThemeProvider theme={themeCondition}>

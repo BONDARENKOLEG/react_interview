@@ -1,11 +1,13 @@
 import themeReducer from './slices/themeSlice'
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from '@reduxjs/toolkit'
+import currencyReducer from './slices/currencySlice'
 import { useDispatch, useSelector } from 'react-redux'
 import type { TypedUseSelectorHook } from 'react-redux'
 
 const rootReducer = combineReducers({
   theme: themeReducer,
+  currency: currencyReducer,
 
 })
 

@@ -3,5 +3,8 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.div`
 padding: 25px;
 width: 100%;
-border-bottom: black 1px solid;
+
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid;
 `
