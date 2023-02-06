@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { THEME } from "../../../../helpers/constants";
 import { themeByDefault } from "./themeToggle.helpers";
 import DayNightToggle from 'react-day-and-night-toggle';
@@ -9,7 +9,7 @@ export const ThemeToggle: FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(themeByDefault())
   const dispatch = useAppDispatch()
 
-  const themeHandler = () => {
+  const themeHandler = useCallback(() => {
     if (isDarkMode) {
       localStorage.setItem('theme', THEME.LIGHT)
       dispatch(setTheme(THEME.LIGHT))
@@ -20,7 +20,7 @@ export const ThemeToggle: FC = () => {
       dispatch(setTheme(THEME.DARK))
       setIsDarkMode(true)
     }
-  }
+  }, [dispatch, isDarkMode])
 
   return <DayNightToggle
     onChange={themeHandler}
