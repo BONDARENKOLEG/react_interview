@@ -5,12 +5,16 @@ export const CurrencyWrapper = styled.div`
   padding: 15px;
   border-radius: 10px;
   min-width: fit-content;
-  width: 8%;
+  width: 9%;
 
   .currency-list {
     .currency-item{
       display: flex;
       justify-content: space-between;
+    }
+
+    .currency {
+      margin-right: 5px;
     }
   }
 `

@@ -1,11 +1,17 @@
 
-import { FC } from 'react'
-import { CurrencyWrapper } from './currency.style'
+import { FC, useEffect } from 'react'
+import { CurrencyWrapper } from './currencyRate.style'
 import { useAppSelector } from '../../../../redux/store'
+import { useCurrency } from '../../../../hooks/useCurrency'
 import { selectCurrency } from '../../../../redux/selectors/currency.selector'
 
-export const Currency: FC = () => {
+export const CurrencyRate: FC = () => {
   const { usd, eur } = useAppSelector(selectCurrency)
+  const fetchCurrency = useCurrency()
+
+  useEffect(() => {
+    fetchCurrency()
+  }, [fetchCurrency])
 
   return <CurrencyWrapper>
     <div className="currency-list">

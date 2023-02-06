@@ -4,12 +4,11 @@ import { createSlice } from '@reduxjs/toolkit'
 interface currencyState {
   usd: string
   eur: string
-
 }
 
 const initialState: currencyState = {
-  usd: '--',
-  eur: '--',
+  usd: '37.4',
+  eur: '40.2',
 }
 
 export const currencySlice = createSlice({
