@@ -1,9 +1,11 @@
 import { Create } from './Create'
 import { Header } from './Header'
+import { Footer } from './Footer'
 import { FC, useState } from 'react'
 import { MainWrapper } from './main.styled'
 import { initialDB } from '../db/initaialDb'
 import { Transactions } from './Transactions'
+
 
 export const Main: FC = () => {
   const [transactions, setTransactions] = useState(initialDB)
@@ -14,6 +16,6 @@ export const Main: FC = () => {
       <Create transactions={transactions} setTransactions={setTransactions} />
       <Transactions transactions={transactions} setTransactions={setTransactions} />
     </MainWrapper>
-
+    <Footer />
   </>
 }
