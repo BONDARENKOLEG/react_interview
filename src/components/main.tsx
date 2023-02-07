@@ -6,10 +6,11 @@ import { Transactions } from './Transactions'
 export const Main: FC = () => {
   const [transactions, setTransactions] = useState(initialDB)
 
+
   return <>
     <Header />
     <div>
-      <Transactions transactions={transactions} />
+      <Transactions transactions={transactions} setTransactions={setTransactions} />
     </div>
 
   </>
