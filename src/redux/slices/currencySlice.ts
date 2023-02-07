@@ -2,13 +2,13 @@ import type { RootState } from '../store'
 import { createSlice } from '@reduxjs/toolkit'
 
 interface currencyState {
-  usd: string
-  eur: string
+  usd: number
+  eur: number
 }
 
 const initialState: currencyState = {
-  usd: '37.4',
-  eur: '40.2',
+  usd: 37.4,
+  eur: 40.2,
 }
 
 export const currencySlice = createSlice({
